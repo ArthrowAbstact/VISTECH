@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <title>Make In India </title>
+  <style>
+   
+    *{
+      box-sizing: border-box;
+    }    
+          
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Arvo|Josefin+Sans|Montserrat|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Vollkorn|Vollkorn+SC">
+  
+  ::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb
+  {
+    background-color: #000000;
+    border: 2px solid #555555;
+  }
+  
+  
+  
+  ::selection {
+    color:cornsilk;
+    background:black ;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+  background-color:#f0f0f0 ;
+  }
+  
+  .resp {
+  z-index: 1000;
+  color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translate3d(-100%, 0, 0);
+  transition: .3s all ease-in-out;
+  position: 500;
+  }
+  .resp:after {
+  content: "";
+  z-index: -500;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  }
+  .resp .resp-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  }
+  .resp .resp-nav .resp-link {
+  text-align: center;
+  letter-spacing: 2px;
+  }
+  .resp .resp-nav .resp-link a {
+  display: block;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  }
+  .resp .resp-nav .resp-link a:after {
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  }
+  
+  .navbar {
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  }
+  .navbar .wrap {
+  width: 90%;
+  margin: 0 auto;
+  }
+  .navbar .wrap .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  }
+  .navbar .wrap .menu .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  }
+  .navbar .wrap .navbar-link a,
+  .navbar .wrap .digiind {
+  display: block;
+  position: relative;
+  padding: 12px;
+  color: #777;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  }
+  .digiind{
+  font-family: 'Capsuula';
+  }
+  .navbar .wrap .digiind {
+  font-weight: 700;
+  font-size: 1.2em;
+  }
+  .navbar .wrap .digiind img {
+  height: 100%;
+  }
+  
+  .navbar-link a {
+  position: relative;
+  }
+  .navbar-link a:after {
+  content: "";
+  transition: all .3s ease;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ff8000;
+  border-radius: 3px;
+  transform: scaleX(0) translateZ(0);
+  transform-origin: bottom center;
+  }
+  .navbar-link a:hover:after {
+  transform: scaleX(1) translateZ(0);
+  } 
+  
+  h1{
+  font-stretch: narrower;
+  text-align: center;
+  overflow:auto;
+  font-weight: 
+  font-family: serif;
+  }
+  
+  #icon {
+  width: 30px;
+  height: calc(100%/2);
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  }
+  
+  #icon span {
+  display: none;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #777;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  }
+  
+  #icon span:nth-child(1) {
+  top: 0px;
+  }
+  
+  #icon span:nth-child(2), #icon span:nth-child(3) {
+  top: 9px;
+  }
+  
+  #icon span:nth-child(4) {
+  top: 18px;
+  }
+  
+  #icon.open span:nth-child(1) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+  }
+  
+  #icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  }
+  
+  #icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  }
+  
+  #icon.open span:nth-child(4) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+  }
+  
+  @media (max-width: 768px) {
+  .navbar-nav {
+    display: none !important;
+  }
+  
+  #icon span {
+    display: block !important;
+  }
+  }
+  @media (min-width: 768px) {
+  .resp {
+    transform: translate3d(-100%, 0, 0) !important;
+  }
+  }
+  
+    @-webkit-keyframes TMNT {
+  0%  { left: 0px; }
+  100% { left: -1200px; }
+  }
+  a.prev,a.next {
+  height:91px;
+  position:absolute;
+  width:35px;
+  top:60%;
+  opacity:0.6;
+  text-indent:-99999px;
+  cursor:crosshair;
+  -webkit-transition:opacity 200ms ease-out;
+  }
+  a.prev:hover,a.next:hover {
+  opacity:1;
+  }
+  .prev {
+  left:0;
+    margin-left: 13.4%;
+  background: #000 url('sprite.png') no-repeat -26px 25px;
+  }
+  .next {
+  background: #000 url('sprite.png') no-repeat 5px 25px;
+    margin-left: 110%;
+  
+  }
+  .slider {
+    display: block;
+  height:50%;
+    list-style-type:none;
+  
+  }
+        
+          
+          .slider img{
+              height: 75%;
+              align-self: center;
+              display: block;
+              margin-left:15%;
+              
+          }
+  .slide {
+  position:absolute;
+  height:40%;
+  width:75%;
+  }
+  .slider .slide:target {
+  }
+  img {
+  width:80%;
+  
+  left:0;
+    align-self: center;
+  }
+  .cont{
+        position: relative;
+    
+    margin-top: 5%;;
+    } 
+    button{
+        color:#fff!important;background-color:#000!important;
+          max-width:980px;margin:auto;
+  border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap    }
+    
+    .left{
+        position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%);
+                margin-left: 12.5%; 
+  
+    }
+    .right{
+        position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%);
+                margin-right: 12.5%; 
+  
+    }
+    .cont img{
+        max-width:80%;
+        width: 75%;
+        
+        height: 450px;
+        margin-left: 12.5%; 
+            
+    }
+    .cont2{
+        width: 75%;
+        margin-left: 14.5%;
+        height: 450px;
+    }
+  
+  
+    .footer{
+        width: 75%;
+        margin-left: 14.5%;
+        height: 150px;
+    }
+    .textbox{
+        width: 30%;
+        margin-left: 35%;
+        border-radius: 70px;
+        border-color: darkgray;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-width: 4px;
+        
+    }
+        
+    #card1{
+        
+        
+        height: 340px;
+        width: 410px;
+        margin: 15px;
+  
+    
+        
+    }
+        #card2{
+        
+        height: 340px;
+        width: 410px;
+        margin: 15px;
+            
+  
+    
+        
+    }
+        #card3{
+      
+        height: 340px;
+        width: 410px;
+        margin: 15px;
+  
+    
+        
+    }
+    
+  
+  
+  
+  .row1 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+    position: static;
+    margin-top: 2%;
+  }
+    .row1 a{
+        display: inline;
+        margin: 3%;
+    }
+  
+  .row2 {
+    position: static;
+  }
+    .row2 a{
+        display: inline;
+        margin:3%;
+    }
+    
+  .row3 {
+    position: static;
+  }
+    .row3 a{
+        display: inline;
+        margin:3%;
+    }
+  .row4 {
+    position: static;
+  }
+    .row4 a{
+        display: inline;
+        margin:3%;
+    }
+  .row5 {
+    position: static;
+  }
+    .row5 a{
+        display: inline;
+        margin:3%;
+    }
+  
+  .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  opacity: 0;
+  }
+  .modal:target {
+  display: block;
+  z-index: 2;
+  opacity: 1;
+  }
+  .popup:target ~ .row1 {
+  overflow: hidden;
+  }
+  
+  
+  
+  
+  
+  
+  .modal-exit {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  z-index: 10;
+  padding: 0.3em;
+  font-size: 2em;
+  line-height: 0.5em;
+  text-decoration: none;
+  color:black;
+  opacity: 0.6;
+  background-color: white;
+  }
+  .modal-exit:hover {
+  background-color:black;
+  color: white;
+  opacity: 1;
+  }
+  .row1 button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .row1 button:nth-child(1){
+    letter-spacing: 2px;
+  }
+  
+  .row1 button:nth-child(2){
+    letter-spacing: 2px;
+  }
+  
+  .row1 button:nth-child(3){
+    letter-spacing: 2px;
+  }
+  .row1 button:nth-child(4){
+    letter-spacing: 2px;
+  }
+  
+  
+  .row2 button:nth-child(1){
+    letter-spacing: 2px;
+  }
+  
+  .row2 button:nth-child(2){
+    letter-spacing: 2px;
+  }
+  
+  .row2 button:nth-child(3){
+    letter-spacing: 2px;
+  }
+  .row2 button:nth-child(4){
+    letter-spacing: 2px;
+  }
+  
+  .row3 button:nth-child(1){
+    letter-spacing: 2px;
+  }
+  
+  .row3 button:nth-child(2){
+    letter-spacing:2px;
+  }
+  
+  .row3 button:nth-child(3){
+    letter-spacing: 2px;
+  }
+  .row3 button:nth-child(4){
+    letter-spacing: 2px;
+  }
+  
+  .row4 button:nth-child(1){
+    letter-spacing: 2px;
+  }
+  
+  .row4 button:nth-child(2){
+    letter-spacing: 2px;
+  }
+  
+  .row4 button:nth-child(3){
+    letter-spacing: 2px;
+  }
+  .row4 button:nth-child(4){
+    letter-spacing: 2px;
+  }
+  
+  
+  .row5 button:nth-child(1){
+    letter-spacing: 2px;
+  }
+  
+  .row5 button:nth-child(2){
+    letter-spacing: 2px;
+  }
+  
+  .row5 button:nth-child(3){
+    letter-spacing: 2px;
+  }
+  .row5 button:nth-child(4){
+    letter-spacing: 2px;
+  }
+  
+  
+    .row2 button a{
+    color: white;
+    text-decoration:  none;
+  }
+  
+    .row3 button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+    .row4 button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+    .row5 button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  
+  .row1 button{
+    display: inline;
+    width: 20%;
+        border: none;
+      height: 60px;
+    font-size: 1.5em;
+      border: #fbfbfb solid 4px;
+      background-color: #ff8000;
+      color:white;
+    -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  }
+  
+  .row1 button:hover{
+  background-color:black;
+  color:white;
+    
+  }
+    .row2 button:hover{
+  background-color:black;
+  color:white;
+    
+  }
+    .row3 button:hover{
+  background-color:black;
+  color:white;
+    
+  }
+    .row4 button:hover{
+  background-color:black;
+  color:white;
+    
+  }
+    .row5 button:hover{
+  background-color:black;
+  color:white;
+    
+  }
+  
+  
+  .row1 button:nth-child(2){
+    width: 30%;
+  }
+  .row2 button{
+    display: inline;
+    width: 20%;
+    font-size: 1.5em;
+        border: none;
+  border: #fbfbfb solid 4px;
+      background-color: #ff8000;
+      color:white;
+    -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+        height: 60px;
+  
+  
+    
+  }
+  .row2 button:nth-child(3){
+    width: 26%;
+  }
+  .row2 button:nth-child(4){
+    width: 30%;
+  }
+  .row3 button{
+    display: inline;
+    width: 20%;
+    font-size: 1.5em;
+        border: none;
+  border: #fbfbfb solid 4px;
+      background-color: #ff8000;
+      color:white;
+    -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+        height: 60px;
+  
+  
+    
+  }
+  
+  .row3 button:nth-child(3){
+    width: auto%;
+  }
+  .row3 button:nth-child(1){
+    width: auto%;
+  }
+  .row3 button:nth-child(2){
+    width: auto%;
+  }
+  .row4 button{
+    display: inline-table;
+    width: auto;
+    font-size: 1.5em;
+        border: none;
+  border: #fbfbfb solid 4px;
+      background-color: #ff8000;
+      color:white;
+    -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+        height: 60px;
+  
+  
+    
+  }
+  .row4 button:nth-child(4){
+    width:24%;
+  }
+  .row5 button{
+    display: inline;
+    width: 20%;
+    font-size: 1.5em;
+        border: none;
+  border: #fbfbfb solid 4px;
+      background-color: #ff8000;
+      color:white;
+    -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+        height: 60px;
+  
+  
+    
+  }
+  .row5 button:nth-child(2){
+    width: 17%;
+  }
+  .row5 button:nth-child(3){
+    width: 30%;
+  }
+  .row5 button:nth-child(4){
+    width: 30%;
+  }
+  
+  
+  .modal-title {
+  font-size: 2em;
+  font-weight: 80;
+  text-align: center;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  }
+  .modal-description {
+  padding: 1em;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  color:black;
+  line-height: 5vw;
+  font-family: sans-serif;
+  }
+  
+  .bg{
+    background-color: #f5f5f5;
+  }
+  
+  div.btn{
+    margin-left:5%;
+    
+  }	
+  
+  .btn button {
+    margin-bottom: 2%;
+  }
+  
+  
+  .sec {
+  background-position: center;
+  margin: 30px 0 0px;
+  text-align: center;
+  min-height: 20px;
+  }
+  
+  .sec h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+  
+  
+  .headerLine {
+  width: 160px;
+  height: 2px;
+  display: inline-block;
+  background: #101F2E;
+  }
+  
+  #about {
+  position: relative;
+  padding: 4.2rem 0 12rem;
+  background-color: #f0f0f0;
+  min-height:15%;
+  text-align: center;
+  }
+  
+  #about h3 {
+  font-family: Farsan sans-serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #07617d;
+  letter-spacing: .3rem;
+  position: relative;
+  }
+  #about .lead {
+  font-family:'Gotham Book' , 'Vollkorn';
+  font-size: 2.5vw;
+  line-height:1.5;
+  color: #484545;
+  }
+  
+  
+  @media only screen and (max-width: 1024px) {
+  #about {
+    min-height: 15%;
+  }
+  #about .about-wrap {
+    max-width: 800px;
+  }
+  #about .lead {
+    font-size:2vw;
+  }
+  }
+  @media only screen and (max-width: 900px) {
+  #about .about-wrap {
+    max-width: 720px;
+  }
+  #about .lead {
+    font-size: 1.8vw;
+  }
+  }
+  @media only screen and (max-width: 768px) {
+  #about h3 {
+    font-size: 1.7rem;
+  }
+  #about .about-wrap {
+    max-width: 600px;
+  }
+  #about .lead {
+    font-size: 1.5vw;
+  }
+  }
+  @media only screen and (max-width: 600px) {
+  #about {
+    min-height: auto;
+  }
+  #about .about-wrap {
+    max-width: 500px;
+  }
+  #about .lead {
+    margin-top: 4.8rem;
+    font-size:1vw;
+  }
+  }
+  @media only screen and (max-width: 500px) {
+  #about h3 {
+    font-size: 1.5rem;
+  }
+  #about .lead {
+    font-size: 1.5rem;
+  }
+  }
+  @media only screen and (max-width: 400px) {
+  #about {
+    padding: 4.2rem 0 9.6rem;
+  }
+  #about .about-wrap {
+    max-width: 380px;
+  }
+  #about .lead {
+    font-size: 1.3;
+  }
+  }
+  
+  
+  
+  #buis{
+      width:%;
+  margin-top: 13%;
+      margin-left:50%;
+  font-family: 'Montserrat' ;
+    width: auto;
+  color: black;
+    padding: 20px;
+    background:WHITE;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0px 0px 35px rgba(0,0,0,0.6);
+  }
+  
+  #buis p{
+    font-weight: 300;
+  background: white;
+  color: #ff8000;
+  
+  }
+  
+  input[type='email']{
+    outline: none;
+    display: inline-block;
+    width: 65%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+      border: 2px solid #aaa;
+  
+  }
+  
+  
+  #sbbtn{
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+    border-radius: 5px;
+    width: 27%;
+    display: inline-block;
+    padding: 8px;
+    background: #fff;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+  
+  #sbbtn:hover{
+    border: 2px solid #aaa;
+  }
+  
+  @media screen and (max-width: 736px){
+    input[type='email']{
+        display: block;
+        width: 100%;
+    }
+    #sbbtn{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
+    }
+  }
+  
+  .dos {
+  background-position: center;
+  margin: 30px 0 0px;
+  text-align: center;
+  min-height: 20px;
+  }
+  
+  .dos h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+  
+  
+  .headerLine {
+  width: 160px;
+  height: 2px;
+  display: inline-block;
+  background: #101F2E;
+  }
+  
+                  .list{
+                            font-family: 'Josefin Sans';
+                            font-size: 2em;
+                            list-style-type:decimal;
+                            text-align: left; 
+                            letter-spacing: .25px;
+                            word-spacing: 1px;
+                            line-height: 50px;
+                margin-left: 5%;
+                  }
+                  
+                  .list-desc{
+                            color:crimson;
+                            
+                  }
+  
+  
+  .btn-container{
+  margin: auto;
+  height:44px;
+  width:166.23px;
+  
+  }
+  .rm{
+          display: none;
+  }
+  
+  .rm1{
+          display: none;
+  }
+  
+  
+  button#toggle{
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  cursor:pointer;
+  border:4px solid black ;
+  padding:8px;
+  font-size:20px;
+  background:none;
+  color:black;
+  font-family:'Gidole';
+  box-sizing:border-box;
+  }
+  button#toggle:hover{
+  background: black;
+  color: white;
+  }
+  
+  .btn-container1{
+  margin: auto;
+  height:44px;
+  width:166.23px;
+  
+  }
+  
+  
+  button#toggle1{
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  cursor:pointer;
+  border:4px solid black ;
+  padding:8px;
+  font-size:20px;
+  background:none;
+  color:black;
+  font-family:'Gidole';
+  box-sizing:border-box;
+  }
+  button#toggle1:hover{
+  background: black;
+  color: white;
+  }
+  
+  
+  .cards img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  }
+  
+  .cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  color: #696969;
+  font-family: 'Roboto' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  }
+  
+  .item {
+  display: flex;
+  padding: 1rem;
+  }
+  .item a {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  }
+  @media (max-width: 767px) {
+  .item {
+    width: 50%;
+  }
+  }
+  @media (min-width: 768px) {
+  .item {
+    width: 33.3333%;
+  }
+  }
+  @media (max-width: 470px) {
+  .item {
+    width: 100%;
+  }
+  }
+  main{
+  width:inherit;
+  text-align: center;
+  letter-spacing: 0pc;
+  display: block;
+  }
+    
+  #btt {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  opacity:.6;
+  transition: 1s;
+  }
+  #btt:hover{
+  opacity:1;
+  transition: 1s;
+  }
+   
+
+    
+    
+  .card {
+  background-color: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+  }
+  .card:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.16);
+  transform: translate(0, -5px);
+  transition-delay: 0s !important;
+  }
+  
+  .content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 15px;
+  }
+  
+  .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+  overflow: hidden;
+  position: relative;
+  }
+  .image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  }
+  @media (min-width: 40rem) {
+  .image::before {
+  padding-top: 66.6%;
+  }
+  }
+  
+  .img1 {
+  background-image: url(ayu.jpg);
+  }
+  
+  .img2 {
+  background-image: url(in.jpg);
+  }
+  
+  .img3 {
+  background-image: url(move.jpg);
+  }
+  
+  .title {
+  font-size: 1.2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #696969;
+  text-transform: uppercase;
+  }
+  
+  
+  
+  
+  </style>
+
+
+	
+
+
+  
+</head>
+
+<body>
+
+  
+<div class="header">
+  <div class="navbar">
+    <div class="wrap">
+      <nav class="menu"><a class="digiind" href="#">Make in India<img src="#" alt=""/></a>
+        <div id="icon"><span></span><span></span><span></span><span></span></div>
+        <ul class="navbar-nav">
+          <li class="navbar-link"><a href="#intro">About</a></li>
+          <li class="navbar-link"><a href="#sec">Sectors</a></li>
+           <li class="navbar-link"><a href="#up">Listicle</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="resp">
+    <ul class="resp-nav">
+      <li class="resp-link"><a href="#intro">About</a></li>
+      <li class="resp-link"><a href="#sec">Sectors</a></li>
+      <li class="resp-link"><a href="#up">Lisicles</a></li>
+    </ul>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script>
+	$(document).ready(function(){
+  var state = false,
+      links = $('.resp-link')
+	$('#icon').click(function(){
+		$(this).toggleClass('open');
+    if(!state) {
+      $('.resp').css("transform", "translate3d(0,0,0)")
+      state = true
+    } else {
+      $('.resp').css("transform", "translate3d(-100%,0,0)")
+      state = false
+    }
+    
+	})
+  $.each(links, function(index,value){
+    value.addEventListener("click",function(){
+      if(!state) {
+        $('.resp').css("transform", "translate3d(0,0,0)")
+        state = true
+      } else {
+        $('.resp').css("transform", "translate3d(-100%,0,0)")
+        state = false
+      }
+      $('#icon').removeClass('open')
+    })
+  })
+})
+	</script>
+	
+	
+	
+
+    
+    <div class="cont">
+  <img class="mySlides" src="5.jpg">
+  <img class="mySlides" src="6.png">
+  <img class="mySlides" src="7.png">
+
+  <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+	<section id="about">
+
+
+
+				<div class="intro" id="intro">
+					<h3>Make in India</h3><br>
+	   			<p  class="lead">Make in India, a type of Swadeshi movement covers 25 sectors of economy.	</div>   
+
+   	 
+
+   </section>
+      
+<button onclick="topFunction()" id="btt" title="Back To Top">&#8613
+
+</button>
+      
+      
+      
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        document.getElementById("btt").style.display = "block";
+    } else {
+        document.getElementById("btt").style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+	
+	<div class="cardsystem">
+    <a href=#><img src="Picture2.png" id="card1"></a>
+    <a href=#><img src="Picture3.png" id="card2"></a>
+    <a href=#><img src="Picture4.png" id="card3"></a></div>
+    <img src="container.jpg" class="cont2">
+
+	
+	
+	
+  <div id="buis">
+    	<h1>India is at 100<sup>th</sup> position in Ease of Doing Buisiness  </h1><br>
+    <p>START YOUR BUISNESS NOW!</p><br>
+	  <input type="email" placeholder="Email">
+    <a href="#" id="sbbtn">Send &raquo;</a>
+</div>
+  
+  
+	
+	
+  <section class="modal bg"  id="modal1">
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Automobiles </h1>
+	<p id="modal1-description" class="modal-description">In April 2017, Kia announced that the company would invest over $1.1 billion to build a car manufacturing plant in Anantapur, Andhra Pradesh. The facility is the company's first manufacturing plant in India. Kia stated that it would hire 3,000 employees for the plant, and it would produce 300,000 cars annually. Construction of the plant began in mid-2017, and is expected to be completed by March 2019. The first vehicles are scheduled to roll off production lines in mid-2019. Kia president Han-Woo Park announced that the first model produced at the plant would be an SUV specifically designed for the Indian market.Park also added that Kia would invest over $2 billion and create 10,000 jobs in India by 2021.
+
+</p>
+</section>
+
+
+<section class="modal bg"  id="modal2"  >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Aviation</h1>
+	<p class="modal-description">India is the world’s fastest growing domestic aviation market, and has posted the fastest full year growth rate for three years in a row now.At USD 16 billion, India’s aviation market is currently the 9th largest in the world and is projected to be the 3rd largest by 2020, and largest by 2030.MRO, ground handling, cargo and ATF infrastructure facilities collocated at an airport, (including heliport licensed by DGCA) are covered under the ‘Harmonised List of Infrastructure and will get the benefit of ‘infrastructure’ sector.</p>
+</section>
+
+<section class="modal bg"  id="modal3" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1  class="modal-title">biotech</h1>
+	<p  class="modal-description">India is among the top 12 biotech destinations in the world and ranks third in the Asia Pacific.No.1 producer of Hepatitis B vaccine recombinant.Indian biotech industry shall touch USD 100 billion by 2025.Large consumer base with increasing disposable income.The sector has seen high growth with a CAGR in excess of 20% and the key drivers for growth in the biotech sector are increasing investments, outsourcing activities, exports and the government's focus on the sector.Cost-effective manufacturing capabilities as compared to other manufacturing economies.Accelerated clearances for Green/Brownfield Projects.</p>
+</section>
+
+<section class="modal bg"  id="modal4" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Construction</h1>
+	<p class="modal-description">USD 1 Trillion investments for infrastructure sector projected during 2012-17USD 650 Billion investments in urban infrastructure estimated over next 20 years.Construction sector contributes towards 8% of the Indian GDP (at constant prices). Last five year estimates (2006-07 to 2010-11).Growth rate for GDP in construction 8.1%.Construction sector in India will remain buoyant due to increased demand from real estate and infrastructure projects.An investment of USD 1 Trillion has been projected for the infrastructure sector until 2017, 40% of which is to be funded by the private sector. 45% of infrastructure investment will be funnelled into construction activity and 20% set to modernise the construction industry.</p>
+</section>
+
+<section class="modal bg"  id="modal5" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Defence Manufacturing </h1>
+	<p class="modal-description">India has the third largest armed forces in the world.The allocation of Defence in the India's union budget is approx USD 34.53 billion and 31.1% of the defence budget is spent on capital acquisitions.60% of defence related requirements are met by imports which offers a huge opportunity for import substitution.India’s current requirements on defence are catered largely by imports.
+Contractual offset obligations worth approximately USD 4.53 billion in next 5-6 years</p>
+</section>
+
+<section class="modal bg"  id="modal6" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Electronic Systems</h1>
+	<p class="modal-description">The electronics market of India is one of the largest in the world and is anticipated to reach USD 400 billion by 2020.Sector is expected to grow at a projected CAGR of 26% for the period 2014-2020. (CAGR – Cumulative annual growth rate)India has the 4th Largest Start up ecosystem in the world.Indian market size is expected to reach USD 400 Billion by 2020.Electronic Manufacturing Services (EMS) industry is expected to be a significant contributor to the entire industry’s development.India has a large pool of skilled manpower and has the third largest pool of scientists and technicians in the world.</p>
+</section>
+
+
+
+<section class="modal bg"  id="modal7" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Food Processing</h1>
+	<p class="modal-description">200.9 million hectares of the Gross Cropped Area in 2013-14.141.4 million hectares of Net Sown Area.127 agro-climactic zones9 Mega Food parks operationalized, 42 got sanctioned.India ranks second in terms of availability of arable land with 127 diverse agro-climatic zones, having a share of 11.2% of the total arable land in the world. In addition, the resource-rich country, has the 6th largest food and grocery market and 5th largest retail market globally.Food processing industry is indigenous to India, because simple home-based techniques such as fermentation has resulted in creation of world-wide acknowledgment of Indian pickles, papads, chutneys and murabbas.</p>
+</section>
+
+<section class="modal bg"  id="modal8" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Information technology and Business Process Management (BPM)</h1>
+	<p class="modal-description">IT-BPM sector accounts for largest share in total Indian services export (45%).IT-BPM sector accounts for 56% of the total global outsourcing market.640 offshore development centers in more than 80 countries.Indian IT & BPM industry is expected to grow to USD 300 billion by 2020.India’s IT – BPM industry amounts for 56% of the global outsourcing market size.Rapidly growing urban infrastructure has fostered several IT centers in the country.Favorable government policies and incentives to facilitate investments in IT sector.</p>
+</section>
+
+
+
+<section class="modal bg"  id="modal9" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Media and Entertainment</h1>
+	<p class="modal-description">INR 204 Billion film industry by 2019.INR 1,026 Billion in 2014 revenues.Second largest TV market in the world.168 Million television households in 2014.INR 45 Million animation industry.800 TV channels.Total market size of the Indian entertainment industry stood at INR 1,026 Billion in 2014, growing by 14.2% over 2013.The industry is expected to register a CAGR of 13.9%, reaching INR 1,964 Billion in 2019.The size of the television industry in India was estimated at INR 475 Billion in 2014, with a projected CAGR of 15.5% to reach INR 975 Billion in 2019.</p>
+</section>
+
+
+<section class="modal bg"  id="modal10" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Oil and Gas</h1>
+	<p class="modal-description">635 million metric Tonnes (MMT) of proven oil reserves (2P).54 trillion cubic Feet of proven natural gas reserves and 96 trillion cubic Feet of estimated Shale gas reserves.Third largest consumer of crude oil and petroleum products in the world and second largest refiner in Asia.Growing economy and population growth are the main drivers for oil and gas demand, increasing every year.Import content in oil and gas sector is in the range of 15% for refinery to 67% for upstream.The oil and gas sector is highly liberalized to attract private investment and to increase domestic production.</p>
+</section>
+
+<section class="modal bg"  id="modal11" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Pharma</h1>
+	<p class="modal-description">Third largest pharmaceuticals market by 2020 in terms of incremental growth.20% of global exports in generics, making it the largest provider of generic medicines globally.USD 45 Billion in revenue by 2020, revenue of USD 55 billion by 2020 as base case, and can grow to USD 70 billion in a aggressive case scenario.India is expected to rank amongst the top three pharmaceutical markets in terms of incremental growth by 2020.India will become the sixth largest market globally in terms of absolute size by zero.India’s generic drugs account for 20% of global exports in terms of volume, making the country the largest provider of generic medicines globally.</p>
+</section>
+
+<section class="modal bg"  id="modal12" >
+	<a href="#sec" class="modal-exit" title="close">&times;</a>
+	<h1 class="modal-title">Ports and Shipping </h1>
+	<p class="modal-description">India has 12 major ports and 64 minor ports handling Export Import cargo.The total cargo handling capacity of Major ports during 2016-17 was 1065.83 MTPA.Projected cargo traffic to be handled by Indian ports by 2021-22 is expected to be 1695 million metric tonnes as per the report of the National Transport Development Policy Committee (an increase of 643 million metric tonnes from 2014-15).Total 2422 million metric tonnes of cargo handling capacity would be required in Indian Ports by 2021-22.For this, additional cargo handling capacity of 901 million metric tonnes is required to be created in Indian Port in the next 6 to 7 years.</p>
+</section>
+
+
+
+
+
+
+
+	
+<div class="btn">	
+	
+	<div class="sec" id="sec">
+    <h2>Sectors</h2>
+    <span class="headerLine"></span>
+</div>
+	
+<main class="row1">
+	<button>
+	<a href="#modal1" >
+Automobiles  </a></button>
+
+	<button>
+	<a href="#modal2" >
+Aviation  </a></button>
+	<button>
+	<a href="#modal3" >
+    Biotech
+  </a> </button>
+	 
+</main>
+
+    <main class="row2">
+		<button>
+	<a href="#modal4" >
+		Construction</a></button>
+		<button>
+	<a href="#modal5" >
+		Defence</a></button>
+		<button>
+	<a href="#modal6" >
+		electronics</a> </button>
+	 
+</main>
+    <main class="row3">
+		<button>
+	<a href="#modal7" >
+		Food Processing  </a></button>
+		<button>
+	<a href="#modal8" >
+		IT  </a> </button>
+	
+	
+	 
+</main>
+    
+    <main class="row4">
+<button>
+		<a href="#modal9" >
+			Media  </a></button>
+
+		<button>
+	<a href="#modal10" >
+Oil
+			</a> </button>
+		<button>
+	<a href="#modal11" >
+Pharmaceuticals
+			</a> </button>
+	 
+</main>
+    
+    <main class="row5">
+		<button>
+	<a href="#modal12" >
+		Ports  </a> </button>
+	
+
+
+</main>
+</div>
+<script>
+	document.body.  innerHTML += '<div id="Alert" style="height:50px;width:100%;background:lightgrey;color:red;position:fixed;left:0;bottom:0;font-family:monospace , serif;font-size:1.6vw;text-align:center;">The graphics are mostly self-made :)  <button style="padding:15px20px;border:none;background:#aaa;cursor:pointer; height:100%;" id="acceptBtn" onclick="document.getElementById(\'Alert\').style.display = \'none\';">Yeah!</button></div>';
+
+  function close(){
+  document.getElementById("cookiesAlert").style.color = "blue";
+}
+	</script>	
+	
+</div>     
+         
+         
+         </ul>
+
+	<br><br><br>
+	
+	<ul class="cards" id="up">
+        <li class="item">
+          <a href="subpage.html">
+            <div class="card">
+              <div class="image img1"></div>
+              <div class="content">
+                <div class="title">Ayushman Bharat</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="item">
+         <a href="subpage2.html">
+          <div class="card">
+            <div class="image img2"></div>
+            <div class="content">
+              <div class="title">New India On the Up </div>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="item">
+        <a href="subpage3.html">
+          <div class="card">
+            <div class="image img3"></div>
+            <div class="content">
+              <div class="title">New india on the move </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  
+  
+
+	
+      <img class="footer" src="regular..jpg">
+</body>
+
+</html>
